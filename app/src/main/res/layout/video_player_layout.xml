@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <SurfaceView
+        android:id="@+id/video_player_view_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/video_player_view_pro_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal|center_vertical" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/video_player_view_control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/video_player_view_play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/play" />
+
+            <SeekBar
+                android:id="@+id/video_player_view_seekbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/video_player_view_fullscreen"
+                android:layout_toRightOf="@+id/video_player_view_play"
+                android:maxHeight="5dp"
+                android:minHeight="5dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:progressDrawable="@drawable/po_seekbar"
+                android:thumb="@drawable/seekbar_thumb"
+                android:thumbOffset="5dp" />
+
+            <TextView
+                android:id="@+id/video_player_view_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/video_player_view_seekbar"
+                android:layout_below="@id/video_player_view_seekbar"
+                android:layout_marginTop="10dp"
+                android:text="00:00/00:00"
+                android:textColor="#FFF" />
+
+            <ImageView
+                android:id="@+id/video_player_view_reset"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@id/video_player_view_play"
+                android:src="@drawable/play"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/video_player_view_stop"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/video_player_view_play"
+                android:src="@drawable/pause"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/video_player_view_fullscreen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fullscreen" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/video_player_view_play_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/video_player_view_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/play" />
+    </FrameLayout>
+
+</FrameLayout>
